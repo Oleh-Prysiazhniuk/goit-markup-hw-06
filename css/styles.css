@@ -840,7 +840,6 @@ display: flex;
 
 .close-btn:hover,
 .close-btn:focus {
-
   fill: var(--accent-color);
 }
 
@@ -884,6 +883,7 @@ display: flex;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .inputs-container-item>textarea {
@@ -894,6 +894,7 @@ display: flex;
   resize: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .inputs-container-item>textarea::placeholder {
@@ -916,17 +917,29 @@ display: flex;
 }
 
 .checkbox {
-  position: absolute;
   width: 16px;
   height: 15px;
-  left: 0;
-  transform: translateY(20%);
-  pointer-events: none;
-  border: 2px solid black;
-  border-radius: 2px;
+ fill: #fff;
 }
 
-.checkbox-input:checked+.checkbox {
+
+.form-icon-check {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--primary-text-color);
+  border-radius: 2px;
+  background-size: contain;
+  transform: translateY(-50%);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.checkbox-input:checked + .form-icon-check {
   background-color: var(--accent-color);
   background-origin: border-box;
   border: transparent;
@@ -962,7 +975,7 @@ display: flex;
   font-weight: bold;
   font-size: 16px;
   line-height: 1.875;
-  color: var(--white-color);
+  color: var(--text-title-color);
   background: var(--accent-color);
   border-radius: 4px;
   border: none;
@@ -975,69 +988,56 @@ display: flex;
 
 .inputs-container-item>.name {
   position: absolute;
-  width: 12px;
-  height: 12px;
-  top: 105px;
+  width: 18px;
+  height: 18px;
+  top: 99px;
   left: 56px;
   transform: translateY(+50%);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .inputs-container-item>.tel {
   position: absolute;
-  width: 13px;
-  height: 13px;
-  top: 177px;
+  width: 18px;
+  height: 18px;
+  top: 173px;
   left: 56px;
   transform: translateY(+50%);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .inputs-container-item>.email {
   position: absolute;
-  width: 15px;
-  height: 12px;
-  top: 250px;
+  width: 18px;
+  height: 18px;
+  top: 243px;
   left: 56px;
   transform: translateY(+50%);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   outline: var(--accent-color);
-}
-
-.footer-submit:focus {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  outline: var(--accent-color);
-}
-
-.textarea:focus {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  outline: var(--accent-color);
-}
-
-.form-input:focus+.name {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  fill: var(--accent-color);
-}
-
-.form-input:focus+.tel {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  fill: var(--accent-color);
-}
-
-.form-input:focus+.email {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  fill: var(--accent-color);
-}
-
-.form-input:focus {
   cursor: pointer;
   border: 1px solid var(--accent-color);
 }
 
+.textarea:focus {
+  border: 1px solid var(--accent-color);
+  outline: var(--accent-color);
+}
+
+.form-input:focus+.name {
+  fill: var(--accent-color);
+}
+
+.form-input:focus+.tel {
+  fill: var(--accent-color);
+}
+
+.form-input:focus+.email {
+  fill: var(--accent-color);
+}
 
 
 /* -------------------- */
