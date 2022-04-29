@@ -1047,5 +1047,8 @@ display: flex;
   color: var(--accent-color);
 }
 
+.button-modal {
+  margin-top: 0;
+}
 
 /* -------------------- */
