@@ -929,14 +929,8 @@ display: flex;
   color: #212121;
 }
 
-.form-contacts {
-  display: flex;
-  flex-direction: column;
-}
-
 .inputs-container {
   list-style: none;
-  flex-direction: column;
   margin-top: 12px;
 }
 
